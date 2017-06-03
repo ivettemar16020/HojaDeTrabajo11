@@ -264,17 +264,17 @@ public class ShortestPathFloyd {
 };
 
 
-         System.out.println("Escribe la ciudad de origen");/*Starting city input*/
+         System.out.println("Escribe la ciudad de origen");
         String origen = in.readLine();
         
-        System.out.println("Escribe la ciudad destino"); /*Final city input*/
+        System.out.println("Escribe la ciudad destino"); 
         String destino = in.readLine();
         
        
         int i = 0;
         int j = 0;
         
-        for(int ab=0; ab < 100; ab++)/*Changes the city name to citi number*/
+        for(int ab=0; ab < 100; ab++) // Se cambia el nombre de la ciudad por su numero correspondiente
             if(origen.compareToIgnoreCase(Cds[ab]) == 0)
                  i = (ab + 1);
             else{

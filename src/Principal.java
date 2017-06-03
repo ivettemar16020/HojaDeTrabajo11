@@ -1,30 +1,16 @@
-/*
- * Shortest Path Between 2 given cities
- * using Floyd's Algorithm
- * 
- *
- *
- * 
- */
 import java.io.*;
- 
 
-/**
- *
- * @author José Manuel
- */
 public class Principal{
 	
- 
-	public Principal() {
-	}
-	
 	private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	
 	public static void main(String[] args) throws IOException {
-		// TODO code application logic here
-		int S[][] = new int [6][6]; /* Creating the adjacency matrix, this is the last adjacency matrix */
+		Texto texto = new Texto();
+		texto.leerTexto();
+		// Matriz de adyacencia
+		int S[][] = new int [6][6]; 
 				
-				S[0][0] = 0;//Defining Values
+				S[0][0] = 0;
 				S[0][1] = 0;
 				S[0][2] = 0;
 				S[0][3] = 0;
@@ -66,14 +52,13 @@ public class Principal{
 				S[5][4] = 4;
 				S[5][5] = 0;
 				
-	  
-				
-		System.out.println("Escribe la ciudad de origen");/*Ask for the initial point, from 1 to 5 */
- 
+		// Punto inicial	
+		System.out.println("Escribe la ciudad de origen");
 
 		int i = Integer.parseInt(in.readLine());
 		
-		System.out.println("Escribe la ciudad destino");/*Ask for the final point*/
+		// Punto final
+		System.out.println("Escribe la ciudad destino");
 		int j = Integer.parseInt(in.readLine());
 		
 		int l = j;
@@ -84,14 +69,12 @@ public class Principal{
 		if (S[i][j] == j) /*If j = S[i][j] there is a direct conection between i and j */
 			System.out.println("La ruta mas corta es ir de: " + i + " a " + j );
 		
-		else{ /* if theres no direct connection between i and j, S[][] has to be evaluated to find the shortest path. */
+		else{ 
+		// Si no hay conexion entre i y j, S[][] se vuelve a revisar S[][]
  
-/*Here is the main problem... this how i programmed the last part of the *algorithm, but it is not 
-*correct. 
-*These Whiles has to check if S[i][l] is equal to l if so, there is a direct *connection between i 
-*and j, if not between i and j you have to pass through S[i][j], and *evaluate this point with 
-*the new value of l
-*/
+
+// Si S[i][l] es uno hay una conexion entre i y j
+// Si no, hay que iterar S[i][j]
 			k = S[i][l];
 			while ( k != l){
 				ruta = S[i][l] + "" + ruta + "";
@@ -106,11 +89,11 @@ public class Principal{
 				
 			}
 			if(j<i)
-			System.out.println("La ruta mas corta a tomar es la sigueinte: " + i + " " + ruta + 
+			System.out.println("La ruta mas corta a tomar es la siguiente: " + i + " " + ruta + 
  
 " " + ruta0 + " "+ j);
 			else
-				System.out.println("La ruta mas corta a tomar es la sigueinte: " + i + " " + 
+				System.out.println("La ruta mas corta a tomar es la siguiente: " + i + " " + 
  
 ruta0 + " " + ruta + " "+ j);
 		 
