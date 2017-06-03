@@ -1,3 +1,9 @@
+/*
+@ Yasmin Chavez Carne 16101
+@ Ivette Cardona Carne 16020
+@ Samantha Duarte Carne 16256
+*/
+
 import java.io.*;
 
 public class Principal{
